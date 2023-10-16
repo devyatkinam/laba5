@@ -14,14 +14,14 @@ bool isp(const string& str) {
 }
 
 int main() {
-    ifstream in("input.txt");
+    ifstream input("input.txt");
     ofstream palindrom("palindrom.txt");
     ofstream non_palindrom("non_palindrom.txt");
     string line;
     string word;
     int lnum = 0;
 
-    while (getline(in, line)) {
+    while (getline(input, line)) {
         vector<string> words;
         int n = 0;
         lnum++;
@@ -34,7 +34,7 @@ int main() {
             }
         }
 
-        if (n == 1 && words.size() == 1) {
+        if (n == 1 ) {
             palindrom << line << endl;
         }
         if(n == 0){
@@ -42,7 +42,7 @@ int main() {
         }
     }
 
-    in.close();
+    input.close();
     palindrom.close();
     non_palindrom.close();
 
